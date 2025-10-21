@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ole Miss Nexus – Opportunities Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --navy:#0b2a3b; /* dark OMBC navy */
@@ -15,7 +16,7 @@
       --ring:rgba(12,86,140,.15)
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    body{margin:0;font-family:Montserrat,Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
     a{color:var(--navy);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:1100px;margin:0 auto;padding:24px}
@@ -28,7 +29,7 @@
     .btn{background:var(--navy);color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:600;box-shadow:0 1px 0 rgba(0,0,0,.04)}
     .btn.alt{background:var(--red)}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:28px 0}
-    .hero h2{font-size:34px;margin:0 0 8px;color:var(--navy)}
+    .hero h2{font-size:40px;margin:0 0 10px;color:var(--navy);font-weight:800;letter-spacing:.2px}
     .hero p{color:var(--muted);margin:0 0 18px}
     .card{background:var(--card);border:1px solid #e6ecf2;border-radius:16px;box-shadow:0 6px 20px -12px var(--ring);padding:18px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -104,10 +105,7 @@
       <div class="grid">
         <div class="card">
           <h4 style="margin:0 0 8px;color:var(--navy)">Featured</h4>
-          <ul id="featured-list" style="margin:0;padding-left:18px">
-            <li><a href="#">Example: Energy Advisory Summer Analyst — Detring</a></li>
-            <li><a href="#">Example: IEX – Market Ops Intern</a></li>
-          </ul>
+          <ul id="featured-list" style="margin:0;padding-left:18px"></ul>
           <p class="note">Replace with a published Google Sheet, Airtable view, or Handshake links.</p>
         </div>
         <div class="card">
