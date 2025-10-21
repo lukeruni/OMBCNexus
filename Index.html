@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ole Miss Nexus – Opportunities Hub</title>
+  <style>
+    :root{
+      --navy:#0b2a3b; /* dark OMBC navy */
+      --red:#cf1020;   /* Ole Miss red */
+      --ink:#1c2834;
+      --muted:#6b7b8c;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ring:rgba(12,86,140,.15)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--navy);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,#fff,rgba(255,255,255,.9));backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #e8edf2;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:42px;height:42px}
+    .brand h1{font-size:18px;line-height:1.1;margin:0;font-weight:800;color:var(--navy)}
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--navy);color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:600;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .btn.alt{background:var(--red)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:28px 0}
+    .hero h2{font-size:34px;margin:0 0 8px;color:var(--navy)}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .card{background:var(--card);border:1px solid #e6ecf2;border-radius:16px;box-shadow:0 6px 20px -12px var(--ring);padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .section h3{margin:8px 0 12px;font-size:20px;color:var(--navy)}
+    .note{font-size:13px;color:var(--muted)}
+    iframe{width:100%;border:0;border-radius:12px;min-height:600px;background:#fff}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef4f9;color:var(--navy);font-size:12px;font-weight:700;letter-spacing:.02em}
+
+    /* Chat widget */
+    .chat{position:fixed;right:18px;bottom:18px;z-index:40}
+    .bubble{background:var(--navy);color:#fff;border-radius:999px;padding:12px 14px;font-weight:700;cursor:pointer;box-shadow:0 10px 30px -10px rgba(0,0,0,.25)}
+    .panel{position:fixed;right:18px;bottom:76px;width:320px;max-width:92vw;background:#fff;border:1px solid #e6ecf2;border-radius:16px;box-shadow:0 24px 60px -24px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden}
+    .panel header{position:unset;background:#fff;border-bottom:1px solid #e6ecf2}
+    .panel .title{display:flex;align-items:center;gap:10px;padding:12px 14px}
+    .panel .title h4{margin:0;color:var(--navy)}
+    .panel .feed{padding:12px;max-height:360px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+    .msg{padding:10px 12px;border-radius:12px;max-width:85%}
+    .msg.bot{background:#f2f6fa;border:1px solid #e6ecf2}
+    .msg.me{margin-left:auto;background:#e9f5ff;border:1px solid #d4e9ff}
+    .panel form{display:flex;gap:8px;padding:12px;border-top:1px solid #e6ecf2}
+    .panel input{flex:1;border:1px solid #dbe6ef;border-radius:10px;padding:10px}
+    .panel button{border:none;background:var(--red);color:#fff;padding:10px 12px;border-radius:10px;font-weight:700}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="https://raw.githubusercontent.com/jarvis-static/ombc-assets/main/ombc-lion.png" alt="OMBC Lion" />
+        <h1>Ole Miss Nexus · Opportunities Hub</h1>
+      </div>
+      <div class="cta">
+        <a class="btn alt" href="#submit">Submit an Event</a>
+        <a class="btn" href="#calendar">This Week</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h2>One link. Everything happening.</h2>
+        <p>Events, internships, and opportunities — unified for students. Add to your calendar in one click, or ask the assistant for exactly what you need.</p>
+        <div class="pill">Pilot v0.1</div>
+      </div>
+      <div class="card">
+        <strong>How to wire your feeds</strong>
+        <ol>
+          <li><b>Google Calendar:</b> publish your campus calendar and paste its embed URL below.</li>
+          <li><b>Career/Handshake:</b> link to recruiting events and postings (deep links).</li>
+          <li><b>Student Orgs:</b> share your intake form; approved posts appear automatically.</li>
+        </ol>
+        <p class="note">This starter page is static HTML/CSS/JS — host anywhere (Google Sites, GitHub Pages). Swap placeholder links with your real assets.</p>
+      </div>
+    </section>
+
+    <section class="section" id="calendar">
+      <h3>Campus Calendar</h3>
+      <div class="card">
+        <!-- Replace the src with your public Google Calendar embed URL -->
+        <iframe title="Google Calendar" src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID&mode=AGENDA&showPrint=0&showTitle=0&wkst=1&bgcolor=%23ffffff" aria-label="Campus calendar agenda"></iframe>
+        <p class="note">Tip: In Google Calendar → Settings → Settings for my calendars → Select calendar → Access permissions → check “Make available to public”, then copy the <em>Embed code</em> URL and paste its <code>src</code> above.</p>
+      </div>
+    </section>
+
+    <section class="section" id="opps" style="margin-top:18px;">
+      <h3>Internships & Job Opportunities</h3>
+      <div class="grid">
+        <div class="card">
+          <h4 style="margin:0 0 8px;color:var(--navy)">Featured</h4>
+          <ul id="featured-list" style="margin:0;padding-left:18px">
+            <li><a href="#">Example: Energy Advisory Summer Analyst — Detring</a></li>
+            <li><a href="#">Example: IEX – Market Ops Intern</a></li>
+          </ul>
+          <p class="note">Replace with a published Google Sheet, Airtable view, or Handshake links.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 8px;color:var(--navy)">All Opportunities</h4>
+          <!-- Example: Embed a published Google Sheet view listing opportunities -->
+          <iframe title="Opportunities" srcdoc="<html><body style='font-family:Arial,sans-serif;font-size:14px;color:#1c2834'>Connect your sheet or Airtable view here.</body></html>"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="submit" style="margin-top:18px;">
+      <h3>Submit an Event or Opportunity</h3>
+      <div class="card">
+        <p>Use the form below. Submissions posted by <b>Wednesday 12:00 PM</b> go live by <b>Thursday 5:00 PM</b>.</p>
+        <!-- Replace FORM_URL with your Google Form or Typeform link -->
+        <p><a class="btn alt" href="https://forms.gle/FORM_URL" target="_blank" rel="noopener">Open Submission Form</a></p>
+        <ul class="note">
+          <li>Include: Title, Date/Time, Location/Link, Host, 140-char description, RSVP link, flyer (optional).</li>
+          <li>Events may be edited for clarity, duplicates removed, and categories added.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Simple on-page assistant (placeholder UI). Wire to your backend or API later. -->
+  <div class="chat">
+    <div class="panel" id="chat-panel" role="dialog" aria-label="Student assistant">
+      <header>
+        <div class="title"><strong>Assistant</strong><span class="pill">beta</span></div>
+      </header>
+      <div class="feed" id="feed">
+        <div class="msg bot">Hi! Tell me your major, year, and what you’re looking for (e.g., "finance recruiting events this week").</div>
+      </div>
+      <form id="chat-form">
+        <input id="chat-input" placeholder="Ask about events, internships, rooms…" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div class="bubble" id="toggle">Ask Nexus</div>
+  </div>
+
+  <script>
+    // Toggle chat panel
+    const toggle=document.getElementById('toggle');
+    const panel=document.getElementById('chat-panel');
+    const feed=document.getElementById('feed');
+    const form=document.getElementById('chat-form');
+    const input=document.getElementById('chat-input');
+    toggle.addEventListener('click',()=>{panel.style.display=panel.style.display==='flex'?'none':'flex'})
+
+    // Minimal local FAQ logic for MVP; replace with real endpoint later.
+    const faqs=[
+      {q:/finance|ib|investment/i,a:'Finance events: check \'Campus Calendar\' → filter by Finance; internships are under \'Internships & Job Opportunities\'.'},
+      {q:/career|handshake/i,a:'Career events and job postings are on Handshake. Use your school login; we deep-link from the Opportunities section.'},
+      {q:/where|room|building|map/i,a:'Room locations are listed on each event. For campus maps search "UM Campus Map"; add the building to your calendar entry.'},
+      {q:/today|this week|tonight/i,a:'Use the Calendar agenda view above; tap an event to add it to your calendar.'}
+    ]
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      const text=input.value.trim();
+      if(!text) return;
+      feed.insertAdjacentHTML('beforeend',`<div class="msg me">${text.replace(/</g,'&lt;')}</div>`);
+      input.value='';
+      const hit=faqs.find(x=>x.q.test(text));
+      const reply=hit?hit.a:"Got it. For now I can search the on-page data and filters. A fuller AI search across calendars and Handshake will be live soon.";
+      setTimeout(()=>feed.insertAdjacentHTML('beforeend',`<div class="msg bot">${reply}</div>`),250);
+      feed.scrollTop=feed.scrollHeight;
+    })
+  </script>
+</body>
+</html>
